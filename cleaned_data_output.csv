@@ -1,0 +1,151 @@
+customer_id,name,email,phone,city,category,spend,signup_date,active
+C0001,Rahul Sharma,user0@email.com,+917712573811,Pune,nan,2255.57,2024-01-03,No
+C0002,Vikram Joshi,user1@email.com,+917217319510,Mumbai,Books,4228.91,2024-03-21,No
+C0003,Priya Patel,user2@email.com,,Delhi,nan,21530.98,,Yes
+C0004,,user3@email.com,+919204561893,Bangalore,nan,1353.97,2024-01-30,No
+C0005,Rahul Sharma,user4@email.com,+919654394497,Pune,Clothing,829.44,2024-01-27,No
+C0006,Ananya Gupta,user5@email.com,+919556681470,Mumbai,Home & Kitchen,875.82,2024-01-22,No
+C0007,Amit Singh,user6@email.com,+918148279239,Bangalore,Electronics,1678.03,2024-02-08,No
+C0008,Rahul Sharma,user7@email.com,+918763636782,Pune,Sports & Fitness,11353.76,2024-06-14,Yes
+C0009,Priya Patel,user8@email.com,+919732956452,Delhi,Sports & Fitness,3717.06,2024-01-15,Yes
+C0010,,user9@email.com,+917401637027,nan,Books,20193.21,,No
+C0011,Vikram Joshi,user10@email.com,+918343754164,Bangalore,Clothing,2536.29,2024-01-04,No
+C0012,Priya Patel,,+917845752226,Bangalore,Electronics,10031.22,2024-02-24,No
+C0013,Priya Patel,user12@email.com,+917791488571,Mumbai,Clothing,1491.38,2024-03-29,Yes
+C0014,Amit Singh,user13@email.com,+918107935033,Delhi,Electronics,5522.8,,No
+C0015,Sneha Kapoor,user14@email.com,,Mumbai,Books,4068.25,2024-02-11,Yes
+C0016,,user15@email.com,,Delhi,Books,1642.38,2024-02-04,Yes
+C0017,Priya Patel,user16@email.com,+917422865762,Delhi,Sports & Fitness,1035.39,2024-04-12,No
+C0018,Priya Patel,user17@email.com,+919278889886,Delhi,Clothing,2770.72,2024-03-12,Yes
+C0019,Sneha Kapoor,user18@email.com,,Delhi,nan,1388.06,2024-02-23,No
+C0020,Priya Patel,user19@email.com,+918372342444,Mumbai,Sports & Fitness,4716.0,2024-01-06,No
+C0021,,,+917446666968,Bangalore,Clothing,4352.27,2024-01-09,No
+C0022,Rahul Sharma,user21@email.com,+917891529612,Bangalore,Sports & Fitness,3280.61,2024-02-05,No
+C0023,Ananya Gupta,user22@email.com,+918811096539,nan,nan,266.07,2024-02-16,No
+C0024,Sneha Kapoor,user23@email.com,+917410057301,Delhi,Home & Kitchen,721.75,2024-03-20,No
+C0025,,user24@email.com,,Pune,Home & Kitchen,23006.01,2024-03-05,No
+C0026,Rahul Sharma,user25@email.com,+917049948975,Delhi,Home & Kitchen,8300.35,2024-04-23,No
+C0027,Ananya Gupta,user26@email.com,+917938726445,nan,Home & Kitchen,5720.71,2024-02-10,No
+C0028,Amit Singh,,,Pune,nan,4527.23,2024-09-20,Yes
+C0029,Rahul Sharma,user28@email.com,+918445772816,nan,Electronics,2653.79,2024-01-03,Yes
+C0030,Vikram Joshi,user29@email.com,+917565903375,Bangalore,nan,13262.78,2024-06-04,Yes
+C0031,,user30@email.com,+917263400434,Pune,nan,16765.88,2024-02-20,Yes
+C0032,Amit Singh,user31@email.com,,Mumbai,nan,6562.76,2024-01-03,No
+C0033,,user32@email.com,+918570122666,Pune,Home & Kitchen,999.78,2024-01-22,No
+C0034,Amit Singh,user33@email.com,+918736577229,Mumbai,nan,6756.97,2024-07-31,Yes
+C0035,Rahul Sharma,user34@email.com,+918515026148,Pune,Books,9220.39,2024-02-08,No
+C0036,,user35@email.com,+919480417091,Mumbai,Books,7930.25,2024-04-21,Yes
+C0037,,user36@email.com,+918564771592,Pune,Electronics,893.58,2024-04-15,No
+C0038,Rahul Sharma,user37@email.com,+919340990918,Pune,Home & Kitchen,8425.52,,Yes
+C0039,Priya Patel,user38@email.com,+917506600167,Bangalore,Home & Kitchen,3701.88,2024-01-08,No
+C0040,Vikram Joshi,user39@email.com,,Delhi,Home & Kitchen,10486.01,,Yes
+C0041,,user40@email.com,+918541240196,Delhi,Sports & Fitness,8480.41,2024-03-18,Yes
+C0042,Priya Patel,user41@email.com,+917324713667,Bangalore,Clothing,2365.6,,No
+C0043,Ananya Gupta,user42@email.com,,nan,Sports & Fitness,1793.23,2024-04-03,Yes
+C0044,,user43@email.com,+917725930464,Mumbai,Clothing,3493.01,2024-02-28,No
+C0045,Ananya Gupta,,,nan,Home & Kitchen,11491.7,2024-02-27,No
+C0046,,user45@email.com,,Pune,Home & Kitchen,3921.41,2024-01-02,No
+C0047,Priya Patel,user46@email.com,+918288718674,Pune,Sports & Fitness,4894.0,2024-01-02,No
+C0048,Vikram Joshi,user47@email.com,+917354377580,Pune,Sports & Fitness,14053.08,2024-02-15,No
+C0049,Rahul Sharma,user48@email.com,+917446991504,Mumbai,Clothing,2039.13,2024-04-06,No
+C0050,Priya Patel,user49@email.com,,Mumbai,Books,7900.01,2024-01-26,No
+C0051,Amit Singh,user50@email.com,+917027610995,Delhi,Clothing,3812.07,2024-01-31,No
+C0052,Rahul Sharma,user51@email.com,+919594922160,Delhi,Sports & Fitness,7769.95,2024-02-29,Yes
+C0053,Vikram Joshi,user52@email.com,+917486026894,nan,nan,1867.81,2024-09-05,No
+C0054,Priya Patel,user53@email.com,+917622825238,Bangalore,Sports & Fitness,6811.84,2024-02-02,No
+C0055,Priya Patel,user54@email.com,+918976001897,Mumbai,nan,4218.57,2024-03-21,No
+C0056,Vikram Joshi,user55@email.com,,Bangalore,Electronics,10468.34,2024-01-08,No
+C0057,Priya Patel,user56@email.com,+919341196179,Pune,Sports & Fitness,8609.04,2024-01-21,No
+C0058,Sneha Kapoor,user57@email.com,+918569971765,Bangalore,Electronics,9368.72,2024-01-16,Yes
+C0059,Sneha Kapoor,user58@email.com,+918651310758,Bangalore,Books,2531.57,,No
+C0060,Ananya Gupta,user59@email.com,,Bangalore,Clothing,812.11,2024-02-03,Yes
+C0061,Vikram Joshi,user60@email.com,+918795504884,Mumbai,nan,6405.22,2024-03-09,Yes
+C0062,Sneha Kapoor,user61@email.com,+918671457918,Pune,Clothing,5124.22,2024-06-28,Yes
+C0063,Priya Patel,user62@email.com,+918673473194,nan,Electronics,3912.35,2024-01-06,Yes
+C0064,Ananya Gupta,user63@email.com,+919992449890,Bangalore,nan,2120.92,2024-05-06,No
+C0065,Priya Patel,user64@email.com,+918527202518,Mumbai,Clothing,11954.38,2024-02-07,Yes
+C0066,Ananya Gupta,user65@email.com,+919624799315,Pune,Sports & Fitness,2561.23,2024-01-11,Yes
+C0067,Vikram Joshi,user66@email.com,+919062496365,nan,Home & Kitchen,14714.12,2024-01-16,No
+C0068,Priya Patel,user67@email.com,+917009259479,Pune,Electronics,4412.22,2024-03-03,No
+C0069,Rahul Sharma,user68@email.com,+917396468115,Pune,Clothing,4726.72,2024-02-13,No
+C0070,,user69@email.com,+919290480868,Bangalore,Electronics,10283.47,2024-01-12,No
+C0071,Priya Patel,user70@email.com,+917655758249,Delhi,nan,4163.58,2024-01-13,No
+C0072,,user71@email.com,+919857354786,Mumbai,Electronics,12787.35,2024-01-26,No
+C0073,Priya Patel,user72@email.com,,Mumbai,nan,827.55,,No
+C0074,,user73@email.com,+919356888403,Delhi,nan,4666.1,2024-06-06,No
+C0075,Priya Patel,user74@email.com,+918770938345,Pune,nan,6667.45,2024-01-12,No
+C0076,Ananya Gupta,user75@email.com,+917691852436,nan,Home & Kitchen,12989.38,2024-03-26,No
+C0077,,user76@email.com,+917093199764,Mumbai,nan,600.89,2024-01-11,No
+C0078,,user77@email.com,+917937607530,Bangalore,Sports & Fitness,9128.59,2024-01-16,No
+C0079,Rahul Sharma,user78@email.com,+917570994543,Mumbai,Electronics,12681.54,2024-02-16,No
+C0080,,user79@email.com,+917678907387,Pune,Clothing,3657.76,2024-02-22,No
+C0081,Rahul Sharma,user80@email.com,+919136361107,Delhi,Books,2545.82,,No
+C0082,,user81@email.com,+917184663541,Bangalore,Electronics,2041.32,2024-01-09,No
+C0083,Priya Patel,user82@email.com,,Pune,Electronics,23.21,2024-07-05,Yes
+C0084,Rahul Sharma,,+918169914319,Mumbai,Home & Kitchen,2538.89,2024-04-09,No
+C0085,Priya Patel,user84@email.com,+917453268764,Pune,Sports & Fitness,12619.63,2024-02-18,Yes
+C0086,Priya Patel,user85@email.com,+917425803361,Mumbai,Books,2130.53,,Yes
+C0087,Amit Singh,user86@email.com,+919711676948,Pune,nan,3009.39,2024-01-19,Yes
+C0088,Rahul Sharma,user87@email.com,+919102616990,Pune,nan,3011.41,2024-02-11,Yes
+C0089,Priya Patel,user88@email.com,+918202102620,nan,nan,970.27,,No
+C0090,Amit Singh,user89@email.com,+919444607903,Mumbai,nan,2714.38,2024-01-05,Yes
+C0091,Amit Singh,user90@email.com,+917313517998,Pune,nan,2250.17,2024-02-11,No
+C0092,Rahul Sharma,user91@email.com,+918521300991,Pune,Clothing,5001.95,2024-02-23,Yes
+C0093,,user92@email.com,+917051892658,Mumbai,Books,5446.34,2024-01-26,No
+C0094,Ananya Gupta,user93@email.com,+919178559374,nan,nan,16229.99,2024-02-20,No
+C0095,Rahul Sharma,user94@email.com,,Delhi,nan,2677.51,2024-05-06,No
+C0096,Ananya Gupta,user95@email.com,+917091356401,Pune,Clothing,28840.41,2024-03-05,Yes
+C0097,,user96@email.com,+918759800865,Pune,Sports & Fitness,4524.1,2024-05-01,No
+C0098,Rahul Sharma,user97@email.com,+917405793969,Delhi,Clothing,6930.68,2024-04-18,No
+C0099,,user98@email.com,+919589544991,Mumbai,nan,11416.57,2024-03-09,No
+C0100,Priya Patel,user99@email.com,+917810971063,Pune,Home & Kitchen,1057.85,2024-03-24,No
+C0101,Priya Patel,user100@email.com,+917713899145,Pune,Home & Kitchen,3193.93,2024-05-07,No
+C0102,Rahul Sharma,user101@email.com,+917756350506,Pune,nan,339.83,2024-01-02,No
+C0103,Rahul Sharma,user102@email.com,,Mumbai,Home & Kitchen,3019.17,2024-01-09,No
+C0104,Rahul Sharma,user103@email.com,+919331384084,Delhi,nan,2905.91,2024-03-22,No
+C0105,Priya Patel,user104@email.com,+919378175687,Pune,nan,4100.82,2024-04-12,No
+C0106,,user105@email.com,+917540050721,Delhi,nan,1004.03,2024-02-12,No
+C0107,Amit Singh,,+917149694589,Pune,Home & Kitchen,14604.56,,Yes
+C0108,Priya Patel,user107@email.com,+918596509038,Pune,nan,1578.66,2024-08-26,No
+C0109,Sneha Kapoor,user108@email.com,+919238773372,Pune,Books,2627.45,2024-01-19,No
+C0110,Amit Singh,user109@email.com,+919323953037,Delhi,Sports & Fitness,848.92,2024-02-16,Yes
+C0111,Rahul Sharma,user110@email.com,+917864595311,Pune,Clothing,5378.25,2024-01-07,No
+C0112,Amit Singh,user111@email.com,+918691279619,Pune,Clothing,1254.96,2024-02-16,No
+C0113,,user112@email.com,+917314458216,nan,nan,5572.07,2024-01-26,No
+C0114,Amit Singh,user113@email.com,+917647334047,Pune,Home & Kitchen,549.68,2024-06-10,No
+C0115,Rahul Sharma,user114@email.com,+917447902335,Delhi,Home & Kitchen,983.39,,No
+C0116,,user115@email.com,+918841317859,Bangalore,nan,1360.24,2024-01-05,No
+C0117,Ananya Gupta,,,Pune,Electronics,1393.1,2024-03-14,No
+C0118,Rahul Sharma,user117@email.com,,Pune,nan,9679.18,,No
+C0119,Rahul Sharma,user118@email.com,+918246903598,Bangalore,Sports & Fitness,2530.71,2024-02-28,Yes
+C0120,,user119@email.com,+919746790342,Mumbai,Books,1146.97,,No
+C0121,Ananya Gupta,user120@email.com,+918823055589,Bangalore,Clothing,11332.99,2024-07-27,Yes
+C0122,Ananya Gupta,user121@email.com,+919213579702,Delhi,nan,446.94,2024-01-09,No
+C0123,Amit Singh,user122@email.com,+918885625571,Mumbai,Electronics,134.45,2024-01-02,No
+C0124,Rahul Sharma,user123@email.com,+917393068047,Mumbai,Electronics,4373.84,,No
+C0125,Rahul Sharma,,+917520408320,Mumbai,nan,11159.32,2024-03-29,Yes
+C0126,Vikram Joshi,user125@email.com,,Delhi,nan,2091.36,2024-02-05,No
+C0127,Vikram Joshi,user126@email.com,,Mumbai,Clothing,2387.7,2024-12-17,No
+C0128,,user127@email.com,+917536222379,Pune,nan,1560.31,2024-02-06,No
+C0129,Rahul Sharma,user128@email.com,+918224452124,Mumbai,Books,2633.18,2024-04-05,No
+C0130,Rahul Sharma,user129@email.com,+917927646033,Pune,Electronics,2864.63,2024-01-15,No
+C0131,Vikram Joshi,user130@email.com,+917188975003,nan,Electronics,14826.34,,Yes
+C0132,Rahul Sharma,user131@email.com,+918874041060,Pune,Sports & Fitness,754.77,2024-01-20,Yes
+C0133,Amit Singh,user132@email.com,,Delhi,Books,3341.6,2024-01-10,Yes
+C0134,Sneha Kapoor,user133@email.com,+917125131548,Pune,Electronics,8043.57,2024-06-21,Yes
+C0135,Priya Patel,user134@email.com,+918740453785,Pune,Books,113.63,2024-03-02,No
+C0136,Ananya Gupta,user135@email.com,+918555828204,Mumbai,Clothing,3900.44,2024-01-20,Yes
+C0137,,user136@email.com,,Delhi,Home & Kitchen,1491.27,2024-02-01,No
+C0138,,user137@email.com,+918465190428,Delhi,Electronics,9006.94,2024-01-16,No
+C0139,Sneha Kapoor,,+917811244842,Mumbai,Sports & Fitness,3729.47,2024-01-02,No
+C0140,Vikram Joshi,user139@email.com,+919994079192,Mumbai,Clothing,1589.38,2024-01-28,Yes
+C0141,Ananya Gupta,user140@email.com,+919702384109,Mumbai,nan,12284.44,2024-02-08,No
+C0142,Rahul Sharma,,+918893966219,Mumbai,Books,4296.2,2024-01-13,Yes
+C0143,,,+918329980509,Mumbai,nan,4039.18,2024-03-30,No
+C0144,Rahul Sharma,,+919896909438,Mumbai,nan,8852.2,2024-04-21,Yes
+C0145,Rahul Sharma,user144@email.com,+918075316325,Delhi,Clothing,55.28,2024-02-29,No
+C0146,Rahul Sharma,user145@email.com,+919165693861,Mumbai,nan,11513.86,2024-01-02,No
+C0147,,user146@email.com,+918142189872,Bangalore,Electronics,4549.22,2024-02-27,Yes
+C0148,,user147@email.com,+918948344398,nan,Books,5468.67,2024-02-09,No
+C0149,Vikram Joshi,user148@email.com,+917912328713,Mumbai,Home & Kitchen,12291.05,,No
+C0150,,user149@email.com,,Pune,Clothing,2415.55,2024-02-03,No
