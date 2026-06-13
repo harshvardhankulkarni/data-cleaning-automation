@@ -1,6 +1,8 @@
-# Data Cleaning Automation
+# Data Cleaning Automation - Demo Project
 
 End-to-end data cleaning pipeline for real-world messy data. Simulates a dirty CRM export and fixes it step by step.
+
+This is a demo project using synthetic data to demonstrate data cleaning and quality assurance techniques.
 
 ## Problem
 
