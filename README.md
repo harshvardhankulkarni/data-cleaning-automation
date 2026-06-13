@@ -2,59 +2,110 @@
 
 End-to-end data cleaning pipeline for real-world messy data. Simulates a dirty CRM export and fixes it step by step.
 
-This is a demo project using synthetic data to demonstrate data cleaning and quality assurance techniques.
-
-## Problem
-
-Real data is never clean. CRM exports have duplicates, invalid emails, inconsistent city names, non-standardized flags, bad dates, negative values, and missing fields. Every analysis project starts with cleaning. Automating this step saves hours and prevents bad decisions.
-
-## Approach
-
-Generated a deliberately dirty dataset with 150 records and 9 columns. Each column has a different type of data quality issue:
-
-| Issue | Example | Frequency |
-|-------|---------|-----------|
-| Empty names | "", "None" | 22% |
-| Invalid emails | Missing @, wrong domain | 8% |
-| Missing phones | "NOT_AVAILABLE" | 15% |
-| Inconsistent cities | "PUNE", "mumbai", "Bngalore" | 20% |
-| Null categories | NaN | 12% |
-| Negative spend | -Rs.4,532 | 8% |
-| Bad dates | "not_a_date", month 13 | 12% |
-| Non-standard flags | "Y", "TRUE", "Yes", "N" | 26% |
-
-Applied 10 cleaning steps:
-1. Remove duplicates
-2. Strip and capitalize names
-3. Validate email format
-4. Standardize city names using lookup mapping
-5. Normalize product categories
-6. Fix negative spend values (take absolute)
-7. Parse dates with multiple format fallback
-8. Standardize active flag to Yes/No
-9. Flag missing phones for CRM update
-10. Generate data quality report
-
-## Results
-
-- 31 total issues detected and resolved.
-- City names normalized from 7 variants to 5 standard names.
-- Active status unified from 6 formats to Yes/No.
-- Bad emails and dates flagged for manual review.
-- Full before-and-after comparison chart saved.
-
-## How to Run
-
-```bash
-pip install pandas matplotlib numpy
-python 3_data_cleaning_automation.py
-```
-
-Output: `3_data_cleaning_report.png` (chart) and `cleaned_data_output.csv` (clean data).
+This is a demo project using synthetic data to demonstrate data quality and cleaning techniques.
 
 ## Tech Stack
 
-Python, Pandas, NumPy, Matplotlib
+- Python 3.8+
+- Pandas 2.0+ - Data manipulation and cleaning
+- NumPy 1.24+ - Random data generation
+- Matplotlib 3.7+ - Visualization
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.8 or higher
+- pip package manager
+
+### Installation
+
+```bash
+git clone https://github.com/harshvardhankulkarni/data-cleaning-automation.git
+cd data-cleaning-automation
+pip install pandas numpy matplotlib
+```
+
+### Running
+
+```bash
+python 3_data_cleaning_automation.py
+```
+
+Expected output:
+
+```
+Original dataset: 150 rows
+--- DATA QUALITY REPORT (BEFORE) ---
+--- FIXED 13 negative spend values ---
+--- FIXED 18 invalid dates ---
+--- CLEANING SUMMARY ---
+Total issues detected and resolved: 31
+...
+Exported: cleaned_data_output.csv
+Done.
+```
+
+### Output Files
+
+| File | Description |
+|------|-------------|
+| 3_data_cleaning_report.png | Before/after comparison chart |
+| cleaned_data_output.csv | Cleaned dataset with all fixes applied |
+
+## How It Works
+
+The script generates a deliberately dirty dataset (150 records, 9 columns) with these issues:
+
+| Column | Issues Introduced | Frequency |
+|--------|------------------|-----------|
+| name | Empty strings, leading/trailing spaces, newlines, None | 22% |
+| email | Missing "@", empty strings | 10% |
+| phone | "NOT_AVAILABLE" placeholder | 15% |
+| city | Different cases, misspellings ("PUNE", "mumbai", "Bngalore") | 20%+ |
+| category | NaN values | 12% |
+| spend | Negative values (data entry errors) | 8% |
+| signup_date | Invalid dates ("not_a_date"), month 13 | 12% |
+| active | 6 formats ("Yes", "Y", "TRUE", "No", "N", "FALSE", None) | 26% |
+
+### Cleaning Steps Applied
+
+1. Remove duplicate rows.
+2. Strip whitespace and capitalize names.
+3. Validate email format (must contain "@" with domain).
+4. Standardize city names using a lookup dictionary.
+5. Normalize product categories.
+6. Fix negative spend by taking absolute value.
+7. Parse dates using multiple format fallbacks.
+8. Standardize active flag to "Yes" or "No".
+9. Flag missing phones for CRM update.
+10. Generate before/after data quality report.
+
+## Project Structure
+
+```
+data-cleaning-automation/
+  3_data_cleaning_automation.py   Main cleaning script
+  README.md                       This file
+  docs/
+    architecture.md                Design and methodology
+    runbook.md                     Operations guide
+```
+
+## Configuration
+
+- `np.random.seed(42)` - Change for different data.
+- `n = 150` - Number of records to generate.
+- Error rates are controlled by `np.random.random() > threshold` checks.
+- City mapping dictionary in `clean_city()` function.
+
+## Extending
+
+Add new cleaning rules by following the existing pattern:
+
+1. Create a new `clean_*` function.
+2. Apply it to the DataFrame column.
+3. Update the data quality report.
 
 ## License
 
