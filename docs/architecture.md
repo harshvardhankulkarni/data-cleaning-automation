@@ -1,94 +1,79 @@
-# Architecture: Data Cleaning Automation
+<!-- GSD -->
 
-## Context
+# Data Cleaning Automation — Architecture
 
-Real-world data is never clean. CRM exports, spreadsheets, and database dumps all have quality issues. Before any analysis can happen, the data must be cleaned. Automating this process saves hours of manual work and prevents bad decisions.
+## Context and Goals
 
-## Goals
+End-to-end data cleaning pipeline that generates a deliberately dirty dataset (150 records) with 9 categories of data quality issues, then applies 10 step-by-step cleaning transformations. Portfolio demo showcasing data quality workflows.
 
-- Detect common data quality issues automatically.
-- Apply standardized fixes to each issue type.
-- Produce a before/after quality report.
-- Export clean data for downstream analysis.
-
-## Design
-
-### Data Flow
+## Data Flow
 
 ```
-Dirty Data Generator
-  - 150 records with controlled errors
-  - 9 columns with different issue types
-        |
-        v
-Data Quality Scanner
-  - Null count per column
-  - Empty string count
-  - Duplicate detection
-        |
-        v
-Cleaning Pipeline (10 steps, sequential)
-  Step 1:  Drop duplicates
-  Step 2:  Clean names (strip, capitalize, remove newlines)
-  Step 3:  Validate email format
-  Step 4:  Standardize city names (lookup mapping)
-  Step 5:  Normalize categories
-  Step 6:  Fix negative spend (absolute value)
-  Step 7:  Parse dates (multiple format fallback)
-  Step 8:  Standardize active flag
-  Step 9:  Flag missing phones
-  Step 10: Generate quality report
-        |
-        v
-Clean DataFrame --> Visualization + CSV Export
+Dirty Data Generation (seed=42, 150 records)
+  → 9 issue types injected (dupes, bad emails, invalid dates, negative spend, inconsistent casing, missing values)
+  → 10 step cleaning pipeline
+  → Before/after quality comparison
+  → Static matplotlib report chart
+  → Interactive Plotly issue distribution
+  → Clean CSV export (31 issues fixed)
 ```
 
-### Cleaning Function Pattern
+## Components
 
-Each cleaning operation follows the same pattern:
+| File | Role |
+|------|------|
+| `3_data_cleaning_automation.py` | Main pipeline: dirty data generation, 10 cleaning steps, quality report, CSV export |
+| `generate_interactive.py` | Generates interactive Plotly HTML version showing issue distribution |
+| `3_data_cleaning_automation.ipynb` | Jupyter notebook for exploratory development |
+| `cleaned_data_output.csv` | Cleaned dataset output |
+| `3_data_cleaning_report.png` | Before/after comparison chart |
+| `3_data_cleaning_interactive.html` | Interactive Plotly chart |
 
-```python
-def clean_column(val):
-    if pd.isna(val):
-        return default_value
-    val = str(val).strip()
-    # transformation logic
-    return val
+## Cleaning Steps
 
-df['column'] = df['column'].apply(clean_column)
-```
+1. Remove duplicate records
+2. Standardize name casing
+3. Validate email formats
+4. Standardize city names
+5. Normalize category values
+6. Clean spend column (remove negatives)
+7. Standardize date formats
+8. Clean active flag
+9. Format phone numbers
+10. Final validation pass
 
-### Data Quality Scoring
-
-The report compares before and after:
-
-- Total rows before/after.
-- Null count per column.
-- Duplicate count.
-- Issues found and fixed count.
-
-## Key Decisions
+## Design Decisions
 
 | Decision | Rationale |
 |----------|-----------|
-| Apply functions instead of regex | More readable. Easier to debug. Handles edge cases better. |
-| Sequential pipeline | Each step depends on the previous. Order matters (clean names before validating emails). |
-| Lookup dictionary for cities | Explicit mapping is safer than fuzzy matching for known values. |
-| Absolute value for negative spend | Assumes sign error (data entry mistake). Logs the count for review. |
+| seed=42 | Reproducible dirty data generation |
+| 150 records | Enough to demonstrate variety of issues without large data |
+| 9 issue categories | Covers common CRM data quality problems |
+| 10 sequential steps | Logical pipeline order: identity → text → numeric → date → validation |
+| 31 total issues | Measurable quality improvement metric |
 
 ## Trade-offs
 
-- **Apply functions vs vectorized operations**: Apply is slower on large datasets (1M+ rows) but more readable. Vectorized cleaning would need more complex logic.
-- **Hardcoded mappings vs ML**: City name standardization uses a fixed dictionary. For unknown cities, it falls back to the original value. A fuzzy matching library (fuzzywuzzy) would catch more variants but add a dependency.
-- **Destructive vs non-destructive**: The pipeline modifies data in place. A production version should keep an audit trail of original values.
+- Synthetic data has known issues — real data often has unexpected quality problems
+- Sequential pipeline means later steps depend on earlier ones
+- Rule-based cleaning only — no ML-based anomaly detection
+- Limited to structured tabular data
 
-## Integration Points
+## File Organization
 
-- **Input**: Self generates data. Replace with `pd.read_csv('export.csv')`.
-- **Output**: `cleaned_data_output.csv` is ready for analysis, dashboarding, or CRM import.
-- **Extending**: Add new cleaning functions for new column types. Each function is independent.
-
-## Dependencies
-
-- Python 3.8+
-- pandas, numpy, matplotlib
+```
+data-cleaning-automation/
+├── 3_data_cleaning_automation.py
+├── generate_interactive.py
+├── 3_data_cleaning_automation.ipynb
+├── 3_data_cleaning_report.png
+├── 3_data_cleaning_interactive.html
+├── cleaned_data_output.csv
+├── index.html
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── GETTING-STARTED.md
+    ├── DEVELOPMENT.md
+    ├── TESTING.md
+    └── CONFIGURATION.md
+```
