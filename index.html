@@ -1,64 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Data Cleaning Automation - Demo Project</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Data Cleaning Automation - Demo Project</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8f9fa;color:#1a1a2e;line-height:1.6}
-.container{max-width:900px;margin:0 auto;padding:40px 20px}
-h1{font-size:2em;margin-bottom:8px;color:#16213e}
-h2{color:#0f3460;margin:24px 0 12px}
-.demo-tag{color:#e94560;font-weight:600;font-size:0.9em}
-img{max-width:100%;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,0.1);margin:16px 0}
-.card{background:white;border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin:16px 0}
-.tag{display:inline-block;background:#e9ecef;color:#495057;padding:3px 10px;border-radius:20px;font-size:0.85em;margin:2px 4px 2px 0}
-.btn{display:inline-block;background:#0f3460;color:white;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:500;margin:8px 4px}
-.btn:hover{background:#16213e}
-.grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;margin:16px 0}
-@media(max-width:600px){.grid{grid-template-columns:1fr 1fr}}
-.metric{text-align:center;padding:16px;background:#f8f9fa;border-radius:8px}
-.metric .num{font-size:1.8em;font-weight:700;color:#e94560}
-.metric .label{font-size:0.85em;color:#6c757d}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:#f4f6f9;color:#1a1a2e;line-height:1.6}
+.nav{background:#16213e;color:white;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+.nav a{color:#8ab4f8;text-decoration:none;font-size:0.9em;margin-left:16px;transition:color .2s}
+.nav a:hover{color:white}
+.nav .site-title{font-weight:600;font-size:1em;color:white}
+.hero{background:linear-gradient(135deg,#16213e,#0f3460);color:white;padding:48px 24px;text-align:center}
+.hero h1{font-size:2.2em;font-weight:700;margin-bottom:8px}
+.hero p{color:#a8c8f8;font-size:1.05em;max-width:700px;margin:0 auto;line-height:1.5}
+.hero .badge{display:inline-block;background:#e94560;padding:3px 14px;border-radius:20px;font-size:0.75em;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px}
+.container{max-width:960px;margin:0 auto;padding:32px 20px}
+.card{background:white;border-radius:12px;padding:28px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.06);transition:box-shadow .2s}
+.card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+.card h2{font-size:1.2em;color:#16213e;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid #eef0f4}
+.chart-frame{width:100%;border-radius:8px;border:1px solid #eef0f4;overflow:hidden}
+.chart-frame img{width:100%;display:block}
+.chart-frame iframe{width:100%;height:450px;border:none;display:block}
+.chart-caption{font-size:0.88em;color:#6c757d;margin-top:8px}
+.grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px}
+@media(max-width:640px){.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.grid-4{grid-template-columns:1fr}}
+.kpi{text-align:center;padding:20px 12px;background:#f8f9fa;border-radius:10px;border:1px solid #eef0f4}
+.kpi .num{font-size:2em;font-weight:700;color:#e94560}
+.kpi .label{font-size:0.82em;color:#6c757d;margin-top:4px}
+.tag{display:inline-block;background:#e9ecef;color:#495057;padding:4px 12px;border-radius:20px;font-size:0.82em;margin:3px 5px 3px 0}
+.btn-group{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:6px;background:#0f3460;color:white;padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.9em;transition:all .2s}
+.btn:hover{background:#16213e;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:#0f3460;border:2px solid #0f3460}
+.btn-outline:hover{background:#0f3460;color:white}
+.btn-green{background:#2ecc71}
+.btn-green:hover{background:#27ae60}
+.btn-interactive{background:#e94560}
+.btn-interactive:hover{background:#d63851}
+.interactive-section{border:2px solid #e94560;border-radius:12px;padding:24px;background:linear-gradient(135deg,#fff5f7,#fff)}
+.interactive-section h2{color:#e94560}
+.interactive-section .badge-hdr{display:inline-block;background:#e94560;color:white;padding:2px 10px;border-radius:12px;font-size:0.7em;font-weight:600;margin-left:8px;vertical-align:middle}
+.list-items{list-style:none;padding:0}
+.list-items li{padding:8px 0;border-bottom:1px solid #f0f0f0;display:flex;gap:8px}
+.list-items li:last-child{border-bottom:none}
+.list-items li::before{content:"\2714";color:#e94560;font-weight:700}
+@media(max-width:480px){.hero h1{font-size:1.6em}.container{padding:16px 12px}.card{padding:16px}}
 </style>
 </head>
 <body>
-<div class="container">
+<nav class="nav">
+<div class="site-title">Data Cleaning Automation</div>
+<div>
+<a href="https://harshvardhankulkarni.github.io/data-analytics-portfolio/">Portfolio</a>
+<a href="https://github.com/harshvardhankulkarni/data-cleaning-automation">GitHub</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="badge">Demo Project</div>
 <h1>Data Cleaning Automation</h1>
-<p class="demo-tag">Demo Project</p>
-<p>End-to-end data cleaning pipeline that detects and fixes 10 types of data quality issues on a deliberately dirty CRM export.</p>
+<p>End-to-end cleaning pipeline that detects and fixes 10 types of data quality issues on a deliberately messy CRM export with 150 records.</p>
+</section>
+
+<div class="container">
 
 <div class="card">
 <h2>Issues Found and Fixed</h2>
-<div class="grid">
-<div class="metric"><div class="num">31</div><div class="label">Total Issues Fixed</div></div>
-<div class="metric"><div class="num">150</div><div class="label">Records Cleaned</div></div>
-<div class="metric"><div class="num">18</div><div class="label">Bad Dates Fixed</div></div>
-<div class="metric"><div class="num">13</div><div class="label">Neg Spend Fixed</div></div>
+<div class="grid-4">
+<div class="kpi"><div class="num">31</div><div class="label">Total Issues Fixed</div></div>
+<div class="kpi"><div class="num">150</div><div class="label">Records Cleaned</div></div>
+<div class="kpi"><div class="num">18</div><div class="label">Bad Dates Fixed</div></div>
+<div class="kpi"><div class="num">13</div><div class="label">Neg Spend Fixed</div></div>
 </div>
 </div>
 
 <div class="card">
-<h2>Output Report</h2>
-<img src="3_data_cleaning_report.png" alt="Data Cleaning Report">
+<h2>Static Output</h2>
+<div class="chart-frame"><img src="3_data_cleaning_report.png" alt="Data Cleaning Report chart"></div>
+<p class="chart-caption">Left: Issues detected across categories. Right: Customer distribution by city after cleaning and standardization.</p>
+</div>
+
+<div class="card interactive-section">
+<h2>Interactive Chart <span class="badge-hdr">Try It</span></h2>
+<p style="margin-bottom:12px;color:#495057">Hover to see exact values. City distribution shown as an interactive pie chart.</p>
+<div class="chart-frame"><iframe src="3_data_cleaning_interactive.html" loading="lazy" title="Interactive data cleaning report"></iframe></div>
+<p class="chart-caption"><a href="3_data_cleaning_interactive.html" target="_blank" style="color:#e94560;font-weight:500">Open interactive chart full screen</a></p>
 </div>
 
 <div class="card">
-<h2>Issues Detected</h2>
-<ul>
-<li>Empty/corrupted names (22% of records)</li>
-<li>Invalid email format (8%)</li>
-<li>Missing phone numbers (15%)</li>
-<li>Inconsistent city names (7 variants)</li>
-<li>Null product categories (12%)</li>
-<li>Negative spend values (8%)</li>
-<li>Invalid dates (12%)</li>
-<li>Non-standardized flags (6 formats)</li>
+<h2>Issues Detected and Resolved</h2>
+<ul class="list-items">
+<li>Empty or corrupted names (22% of records) - standardized to proper format.</li>
+<li>Invalid email format (8%) - flagged for manual review.</li>
+<li>Missing phone numbers (15%) - replaced with null markers.</li>
+<li>Inconsistent city names (7 variants normalized to 5 standard names).</li>
+<li>Null product categories (12%) - mapped to Uncategorized.</li>
+<li>Negative spend values (8%) - converted to absolute values.</li>
+<li>Invalid dates (12%) - parsed across 4 date formats.</li>
+<li>Non-standardized active flags (6 formats) - normalized to Yes/No.</li>
 </ul>
 </div>
 
-<a class="btn" href="https://github.com/harshvardhankulkarni/data-cleaning-automation" target="_blank">View Source</a>
-<a class="btn" href="3_data_cleaning_automation.py" target="_blank">Download Script</a>
-<a class="btn" href="docs/architecture.md" target="_blank">Architecture</a>
-<a class="btn" href="docs/runbook.md" target="_blank">Runbook</a>
+<div class="card">
+<h2>Notebook</h2>
+<p style="margin-bottom:12px;color:#495057">Follow the 10-step cleaning process in Jupyter Notebook.</p>
+<a class="btn btn-green" href="3_data_cleaning_automation.ipynb">Download .ipynb Notebook</a>
 </div>
+
+<div class="card">
+<h2>Tech Stack</h2>
+<span class="tag">Python</span>
+<span class="tag">Pandas</span>
+<span class="tag">NumPy</span>
+<span class="tag">Matplotlib</span>
+<span class="tag">Data Quality</span>
+<span class="tag">Plotly</span>
+</div>
+
+<div class="btn-group">
+<a class="btn" href="https://github.com/harshvardhankulkarni/data-cleaning-automation">View Repository</a>
+<a class="btn btn-outline" href="3_data_cleaning_automation.py">Download Script</a>
+<a class="btn btn-outline" href="docs/architecture.md">Architecture</a>
+<a class="btn btn-outline" href="docs/runbook.md">Runbook</a>
+<a class="btn btn-interactive" href="3_data_cleaning_interactive.html">Interactive Chart</a>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:24px;color:#6c757d;font-size:0.85em;border-top:1px solid #dee2e6;margin-top:24px">
+<p><a href="https://harshvardhankulkarni.github.io/data-analytics-portfolio/" style="color:#0f3460">Back to Portfolio</a> &middot; Harshvardhan Kulkarni</p>
+</footer>
 </body>
 </html>
